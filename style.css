@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap");
+/* font-family: 'Freckle Face', cursive;*/
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+
+  font-size: rem 1.6;
+  font-family: "Freckle Face", cursive;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 20vh 1fr 10vh;
+}
+
+.nameBox {
+  grid-column: 2;
+  grid-row: 2;
+
+  display: flex;
+  justify-content: center;
+}
+
+.nameInput {
+  width: 55%;
+  height: 2rem;
+}
+
+.nameButton {
+  width: 2rem;
+}
