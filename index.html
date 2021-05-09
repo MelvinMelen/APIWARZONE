@@ -15,12 +15,39 @@
     <title>Warzone API</title>
   </head>
   <body>
-    <form class="nameBox" data-name-box>
-      <input type="text" class="nameInput" data-name-input />
-
-      <button class="nameButton">
-        <i class="fas fa-plus"></i>
-      </button>
+    <form class="input-container" data-name-box>
+      <div>
+        <label for="battle" class="radio">
+          <input
+            type="radio"
+            name="platform"
+            id="battle"
+            value="battle"
+            class="radio-input"
+          />
+          <div class="radio-radio"></div>
+          <!-- virtual element from css -->
+          Battle
+        </label>
+        <label for="psn" class="radio">
+          <input
+            type="radio"
+            name="platform"
+            id="psn"
+            value="psn"
+            class="radio-input"
+          />
+          <div class="radio-radio"></div>
+          <!-- virtual element from css -->
+          Psn
+        </label>
+      </div>
+      <div class="input">
+        <input type="text" class="name-input" data-name-input />
+        <button class="name-button">
+          <i class="fas fa-plus"></i>
+        </button>
+      </div>
     </form>
     <div class="output" data-output></div>
   </body>

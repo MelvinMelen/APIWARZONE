@@ -4,12 +4,17 @@ let output = document.querySelector("[data-output]");
 document.querySelector("[data-name-box]").addEventListener("submit", (event) => {
   event.preventDefault();
   let playerInput = document.querySelector("[data-name-input]").value;
- let playerName =  playerInput.replace("#", "%2523");
-  presentUserStats(playerName);
+  let playerName =  playerInput.replace("#", "%2523");
+  let platform = document.getElementsByName("platform");
+  presentUserStats(playerName, platform);
 })
 // M33L%25232684 M33L#2684
-function presentUserStats(playerName) {
-    fetch("https://call-of-duty-modern-warfare.p.rapidapi.com/warzone/" + playerName + "/battle", {
+function presentUserStats(playerName, platform) {
+	for(let i = 0; i < 2; i++){
+		if(platform[i].checked){
+			console.log(platform[i].value)
+		}
+		fetch("https://call-of-duty-modern-warfare.p.rapidapi.com/warzone/" + playerName + "/"+platform[i].value, {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-key": "6bbf769455msh9e00165a14552adp1589fejsne12384413e18",
@@ -18,8 +23,9 @@ function presentUserStats(playerName) {
 })
 .then(response => response.json())
 .then ( (data) => {
+	document.querySelector("[data-output]").innerHTML = "";
 	console.log(data);
-	output.append(userStatsBr(data.br.kills));
+	output.append(userStatsBr(data.br.kills, data.br.deaths));
 })
 .catch(err => {
 	console.error(err);
@@ -27,8 +33,11 @@ function presentUserStats(playerName) {
 
 
 }
+	}
 
-function userStatsBr(kills){
+    
+
+function userStatsBr(kills, deaths){
 	let userStatsContainer = document.createElement("div");
 	userStatsContainer.classList.add("user-stats-container-br");
 	let titel = document.createElement("h2");
@@ -37,12 +46,14 @@ function userStatsBr(kills){
 
 	let userKillStats = document.createElement("div");
 	console.log(kills);
-	userKillStats.innerText = "Kills: "+kills;
+	userKillStats.innerText = "Kills: " + kills;
 	console.log(userKillStats);
 	userStatsContainer.append(userKillStats);
 	
-	let userDeatStats = document.createElement("div");
-	userDeathStats.innerText = "Deats: "+deaths;
+	let userDeathStats = document.createElement("div");
+	console.log(deaths);
+	userDeathStats.innerText = "Deaths: " + deaths;
+	userStatsContainer.append(userDeathStats);
 	
 	return userStatsContainer;
 }
