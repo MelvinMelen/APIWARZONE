@@ -3,10 +3,11 @@ let output = document.querySelector("[data-output]");
 
 document.querySelector("[data-name-box]").addEventListener("submit", (event) => {
   event.preventDefault();
- let playerName =  document.querySelector("[data-name-input]").value;
-  presentUserStats(playerName)
+  let playerInput = document.querySelector("[data-name-input]").value;
+ let playerName =  playerInput.replace("#", "%2523");
+  presentUserStats(playerName);
 })
-// M33L%25232684
+// M33L%25232684 M33L#2684
 function presentUserStats(playerName) {
     fetch("https://call-of-duty-modern-warfare.p.rapidapi.com/warzone/" + playerName + "/battle", {
 	"method": "GET",
@@ -18,7 +19,7 @@ function presentUserStats(playerName) {
 .then(response => response.json())
 .then ( (data) => {
 	console.log(data);
-	output.append(userStats(data.br.kills));
+	output.append(userStatsBr(data.br.kills));
 })
 .catch(err => {
 	console.error(err);
@@ -27,13 +28,23 @@ function presentUserStats(playerName) {
 
 }
 
-function userStats(kills){
+function userStatsBr(kills){
 	let userStatsContainer = document.createElement("div");
-	userStatsContainer.classList.add("user-stats-container");
+	userStatsContainer.classList.add("user-stats-container-br");
+	let titel = document.createElement("h2");
+	titel.innerText = "BR";
+	userStatsContainer.append(titel);
 
 	let userKillStats = document.createElement("div");
-	userKillStats.innerText = kills;
+	console.log(kills);
+	userKillStats.innerText = "Kills: "+kills;
+	console.log(userKillStats);
 	userStatsContainer.append(userKillStats);
+	
+	let userDeatStats = document.createElement("div");
+	userDeathStats.innerText = "Deats: "+deaths;
+	
+	return userStatsContainer;
 }
 
 // let output = document.getElementById("output");

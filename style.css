@@ -11,9 +11,6 @@
 }
 
 body {
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
-  grid-template-rows: 20vh 1fr 10vh;
 }
 
 .nameBox {
@@ -31,4 +28,26 @@ body {
 
 .nameButton {
   width: 2rem;
+}
+
+.output {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.user-stats-container-br {
+  grid-column: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  margin: 2rem;
+  padding: 1rem;
+  border: 0.5rem black solid;
+  border-radius: 20px;
+}
+.user-stats-container-br h2 {
+  align-self: center;
+  padding-bottom: 1rem;
 }
