@@ -1,6 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 /* font-family: 'Roboto', sans-serif; */
 
+/* Hex colors */
+/* Dark tint: #202225 */
+/* Light tint: #40444b */
+/* Blue tint: #7289da */
+/* Background dark: #2f3136 */
+/* Background light: #36393f */
+/* Text 1: #adafb2 */
+/* Text 2: #75797e */
+
 * {
   padding: 0;
   margin: 0;
@@ -8,11 +17,30 @@
 
   font-size: rem 1.6;
   font-family: "Roboto", sans-serif;
+  color: #9e9e9e;
 }
 
 body {
   display: flex;
   flex-direction: column;
+  background: #36393f;
+}
+
+/* Customize header */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.background {
+  width: 100vw;
+  height: 80vh;
+  opacity: 0.5;
+  background-image: url(/img/warzone1.jpg);
+  background-size: cover;
+  position: center;
+  display: inline-flex;
+  justify-content: center;
 }
 
 /* Customize form container for input */
@@ -20,13 +48,35 @@ body {
   grid-column: 2;
   grid-row: 2;
 
-  display: flex;
-  flex-direction: column;
+  display: inline-flex;
   justify-content: center;
-
   align-self: center;
-  margin-top: 15rem;
+
+  margin-top: 8rem;
   width: 25vw;
+}
+
+/* dropdown menu */
+.dropdown {
+  width: 5vw;
+  position: relative;
+  display: inline-block;
+  background-color: #36393f;
+}
+.dropdown-content {
+  display: none;
+  right: 0;
+  top: 2.25rem;
+  position: absolute;
+  background-color: #36393f;
+  min-width: 10vw;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 1rem;
+  z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 /* radio input, hide default button, ccustomize new check box */
@@ -43,7 +93,7 @@ body {
 .radio-radio {
   width: 1.25rem;
   height: 1.25rem;
-  border: solid 2px grey;
+  border: solid 2px #adafb2;
   border-radius: 50%;
   margin-right: 10px;
   box-sizing: border-box; /*make sure padding works properly*/
@@ -54,7 +104,7 @@ body {
   width: 100%;
   height: 100%;
   display: block;
-  background: grey;
+  background: #7289da;
   border-radius: 50%;
 
   transform: scale(0); /*Sets a two way transformation*/
@@ -67,14 +117,49 @@ body {
 /* Customize name input  */
 .input {
   display: inline-flex;
+  height: 2.25rem;
 }
 .name-input {
   font-size: 1rem;
   width: 25vw;
-  height: 2.25rem;
   margin-right: 5px;
+  padding-left: 5px;
+
+  border: solid 1px black;
+  color: #75797e;
+  background: #40444b;
 }
 .name-button {
   width: 5vw;
   cursor: pointer;
+  border: solid 1px black;
+  background: #40444b;
+}
+.fa-plus {
+  color: #7289da;
+}
+
+/* JS stats container customization */
+.output {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5rem;
+}
+.user-stats-container {
+  width: 20vw;
+  height: 25vh;
+  margin: 15px;
+  background: #40444b;
+  color: #75797e;
+  border-radius: 25px;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+.user-stats-container h2 {
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+.user-stats-container div {
+  margin-left: 10px;
+  margin-bottom: 10px;
 }

@@ -26,22 +26,22 @@ function presentUserStats(playerName, platform) {
 	document.querySelector("[data-output]").innerHTML = "";
 	console.log(data);
 	output.append(userStatsBr(data.br.kills, data.br.deaths));
+	output.append(userStatsPl(data.br.kills, data.br.deaths));
+	
 })
 .catch(err => {
 	console.error(err);
 });
-
-
 }
 	}
 
-    
 
+	
 function userStatsBr(kills, deaths){
 	let userStatsContainer = document.createElement("div");
-	userStatsContainer.classList.add("user-stats-container-br");
+	userStatsContainer.classList.add("user-stats-container");
 	let titel = document.createElement("h2");
-	titel.innerText = "BR";
+	titel.innerText = "Battle Royale";
 	userStatsContainer.append(titel);
 
 	let userKillStats = document.createElement("div");
@@ -58,31 +58,24 @@ function userStatsBr(kills, deaths){
 	return userStatsContainer;
 }
 
-// let output = document.getElementById("output");
+function userStatsPl(kills, deaths){
+	let userStatsContainer = document.createElement("div");
+	userStatsContainer.classList.add("user-stats-container");
+	let titel = document.createElement("h2");
+	titel.innerText = "Plunder";
+	console.log(titel);
+	userStatsContainer.append(titel);
+	console.log(userStatsContainer);
 
-// document.querySelector("form").addEventListener("submit", (event) => {
-//     event.preventDefault();
-//     let playerName = document.querySelector("[data-name-input]").value;
-//     presentUserStats(playerName);
-// })
+	let userKillStats = document.createElement("div");
+	userKillStats.innerText = "Kills: " + kills;
+	console.log(kills);
+	userStatsContainer.append(userKillStats);
 
+	let userDeathStats = document.createElement("div");
+	userDeathStats.innerText = "Deaths: " + deaths;
+	console.log(deaths);
+	userStatsContainer.append(userDeathStats);
 
-// function presentUserStats(playerName) {
-//     fetch("https://call-of-duty-modern-warfare.p.rapidapi.com/warzone/" + playerName + "/battle", {
-//         "method": "GET",
-//         "headers": {
-//             "x-rapidapi-key": "ca80e9e0bemsh20dfbedd9e3a1e4p18ba1bjsn961ab30b9aa8",
-//             "x-rapidapi-host": "call-of-duty-modern-warfare.p.rapidapi.com"
-//         }
-//     })
-//     .then(response => response.json())
-//     .then((data) => {
-//         console.log(data);
-//     })
-//     .catch(err => {
-//         console.error(err);
-//     });
-// }
-
-
-
+	return userStatsContainer;
+}

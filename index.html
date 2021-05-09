@@ -15,40 +15,79 @@
     <title>Warzone API</title>
   </head>
   <body>
-    <form class="input-container" data-name-box>
-      <div>
-        <label for="battle" class="radio">
-          <input
-            type="radio"
-            name="platform"
-            id="battle"
-            value="battle"
-            class="radio-input"
-          />
-          <div class="radio-radio"></div>
-          <!-- virtual element from css -->
-          Battle
-        </label>
-        <label for="psn" class="radio">
-          <input
-            type="radio"
-            name="platform"
-            id="psn"
-            value="psn"
-            class="radio-input"
-          />
-          <div class="radio-radio"></div>
-          <!-- virtual element from css -->
-          Psn
-        </label>
-      </div>
-      <div class="input">
-        <input type="text" class="name-input" data-name-input />
-        <button class="name-button">
-          <i class="fas fa-plus"></i>
-        </button>
-      </div>
-    </form>
+    <header>
+      <div>PLACEHOLDER TEXT</div>
+    </header>
+    <div class="background">
+      <form class="input-container" data-name-box>
+        <div class="dropdown">
+          <input type="checkbox" class="dropdown-check" />
+          <div class="platform-img" data-platform-img></div>
+          <i class="fas fa-caret-down"></i>
+          <div class="dropdown-content">
+            <div>
+              <label for="battle" class="radio">
+                <input
+                  type="radio"
+                  name="platform"
+                  id="battle"
+                  value="battle"
+                  class="radio-input"
+                />
+                <div class="radio-radio"></div>
+                <i class="fab fa-battle-net"></i>
+                Battle.net
+              </label>
+              <label for="psn" class="radio">
+                <input
+                  type="radio"
+                  name="platform"
+                  id="psn"
+                  value="psn"
+                  class="radio-input"
+                />
+                <div class="radio-radio"></div>
+                <i class="fab fa-playstation"></i>
+                PlayStation Network
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- <div>
+          <label for="battle" class="radio">
+            <input
+              type="radio"
+              name="platform"
+              id="battle"
+              value="battle"
+              class="radio-input"
+            />
+            <div class="radio-radio"></div>
+            
+            Battle
+          </label>
+          <label for="psn" class="radio">
+            <input
+              type="radio"
+              name="platform"
+              id="psn"
+              value="psn"
+              class="radio-input"
+            />
+            <div class="radio-radio"></div>
+            
+            Psn
+          </label>
+        </div> -->
+        <div class="input">
+          <input type="text" class="name-input" data-name-input />
+          <button class="name-button">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+
     <div class="output" data-output></div>
   </body>
 </html>
