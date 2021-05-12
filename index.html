@@ -16,12 +16,18 @@
   </head>
   <body>
     <header>
-      <div>PLACEHOLDER TEXT</div>
+      <h3>Warzone Stat Tracker</h3>
     </header>
-    <div class="background">
-      <form class="input-container" data-name-box>
-        <div class="dropdown">
-          <h3>Platform</h3>
+    <div class="main-container">
+      <h1 class="titel">WARZONE STAT TRACKER</h1>
+      <div class="input-container">
+        <div class="dropdown" data-dropdown>
+          <h3>
+            <p>Platform</p>
+            <i class="fab fa-battle-net" data-platform-battle></i>
+            <i class="fab fa-playstation" data-platform-psn></i>
+          </h3>
+
           <i class="fas fa-caret-down"></i>
           <div class="dropdown-content">
             <label for="battle" class="radio">
@@ -30,8 +36,8 @@
                 name="platform"
                 id="battle"
                 value="battle"
-                checked="checked"
                 class="radio-input"
+                data-battle
               />
               <div class="radio-radio">
                 <i class="fab fa-battle-net"></i>
@@ -44,7 +50,9 @@
                 name="platform"
                 id="psn"
                 value="psn"
+                checked="checked"
                 class="radio-input"
+                data-psn
               />
               <div class="radio-radio">
                 <i class="fab fa-playstation"></i>
@@ -54,19 +62,47 @@
           </div>
         </div>
         <div class="input">
-          <input
-            type="text"
-            class="name-input"
-            placeholder="Amartin743 M33L#2684"
-            data-name-input
-          />
-          <button class="name-button">
-            <i class="fas fa-search"></i>
-          </button>
+          <form class="name-input-container" data-name-box>
+            <input
+              type="text"
+              class="name-input"
+              placeholder="Amartin743"
+              data-name-input
+            />
+            <button class="button">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+          <a href="/help.html">
+            <button class="button">
+              <i class="fas fa-question"></i>
+            </button>
+          </a>
         </div>
-      </form>
+      </div>
     </div>
-
     <div class="output" data-output></div>
+    <footer>
+      <div class="about-us">
+        <h2>About our Warzone Stats</h2>
+        <p>
+          Our stats are directly pulled from Activisions official API, letting
+          us use and display your Warzone stats if you have given your consent
+          via your Activision account settings. If you want to change your
+          account privacy settings see <a href="/help.html">here</a>.
+        </p>
+      </div>
+      <div class="contact">
+        <p><i class="fas fa-at"></i>warzonestat@tracker.com</p>
+        <div class="social">
+          <div class="twitter"><i class="fab fa-twitter"></i></div>
+          <div class="instagram"><i class="fab fa-instagram"></i></div>
+          <div><i class="fab fa-discord"></i></div>
+        </div>
+      </div>
+      <div class="trademark">
+        <p>2021 <i class="far fa-copyright"></i> Warzone Stat Tracker</p>
+      </div>
+    </footer>
   </body>
 </html>
