@@ -25,8 +25,8 @@ function presentUserStats(playerName, platform) {
 .then ( (data) => {
 	document.querySelector("[data-output]").innerHTML = "";
 	console.log(data);
-	output.append(userStatsBr(data.br.kills, data.br.deaths));
-	output.append(userStatsPl(data.br.kills, data.br.deaths));
+ 	output.append(userStatsBr(data.br.kills, data.br.deaths, data.br.wins, data.br.kdRatio));
+	output.append(userStatsPl(data.br_dmz.kills, data.br_dmz.deaths));
 	
 })
 .catch(err => {
@@ -37,23 +37,28 @@ function presentUserStats(playerName, platform) {
 
 
 	
-function userStatsBr(kills, deaths){
+function userStatsBr(kills, deaths, wins, kdRatio){
 	let userStatsContainer = document.createElement("div");
 	userStatsContainer.classList.add("user-stats-container");
 	let titel = document.createElement("h2");
 	titel.innerText = "Battle Royale";
 	userStatsContainer.append(titel);
 
+	let userKdStats = document.createElement("div");
+	userKdStats.innerText = "K/D ratio: " + kdRatio.toFixed(2);
+	userStatsContainer.append(userKdStats);
+
 	let userKillStats = document.createElement("div");
-	console.log(kills);
 	userKillStats.innerText = "Kills: " + kills;
-	console.log(userKillStats);
 	userStatsContainer.append(userKillStats);
 	
 	let userDeathStats = document.createElement("div");
-	console.log(deaths);
 	userDeathStats.innerText = "Deaths: " + deaths;
 	userStatsContainer.append(userDeathStats);
+
+	let userWinsStats = document.createElement("div");
+	userWinsStats.innerText = "Wins: " + wins;
+	userStatsContainer.append(userWinsStats);
 	
 	return userStatsContainer;
 }

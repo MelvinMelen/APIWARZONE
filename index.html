@@ -21,68 +21,47 @@
     <div class="background">
       <form class="input-container" data-name-box>
         <div class="dropdown">
-          <input type="checkbox" class="dropdown-check" />
-          <div class="platform-img" data-platform-img></div>
+          <h3>Platform</h3>
           <i class="fas fa-caret-down"></i>
           <div class="dropdown-content">
-            <div>
-              <label for="battle" class="radio">
-                <input
-                  type="radio"
-                  name="platform"
-                  id="battle"
-                  value="battle"
-                  class="radio-input"
-                />
-                <div class="radio-radio"></div>
+            <label for="battle" class="radio">
+              <input
+                type="radio"
+                name="platform"
+                id="battle"
+                value="battle"
+                checked="checked"
+                class="radio-input"
+              />
+              <div class="radio-radio">
                 <i class="fab fa-battle-net"></i>
-                Battle.net
-              </label>
-              <label for="psn" class="radio">
-                <input
-                  type="radio"
-                  name="platform"
-                  id="psn"
-                  value="psn"
-                  class="radio-input"
-                />
-                <div class="radio-radio"></div>
+                <p>Battle.net</p>
+              </div>
+            </label>
+            <label for="psn" class="radio">
+              <input
+                type="radio"
+                name="platform"
+                id="psn"
+                value="psn"
+                class="radio-input"
+              />
+              <div class="radio-radio">
                 <i class="fab fa-playstation"></i>
-                PlayStation Network
-              </label>
-            </div>
+                <p>PlayStation Network</p>
+              </div>
+            </label>
           </div>
         </div>
-        <!-- <div>
-          <label for="battle" class="radio">
-            <input
-              type="radio"
-              name="platform"
-              id="battle"
-              value="battle"
-              class="radio-input"
-            />
-            <div class="radio-radio"></div>
-            
-            Battle
-          </label>
-          <label for="psn" class="radio">
-            <input
-              type="radio"
-              name="platform"
-              id="psn"
-              value="psn"
-              class="radio-input"
-            />
-            <div class="radio-radio"></div>
-            
-            Psn
-          </label>
-        </div> -->
         <div class="input">
-          <input type="text" class="name-input" data-name-input />
+          <input
+            type="text"
+            class="name-input"
+            placeholder="Amartin743 M33L#2684"
+            data-name-input
+          />
           <button class="name-button">
-            <i class="fas fa-plus"></i>
+            <i class="fas fa-search"></i>
           </button>
         </div>
       </form>

@@ -23,7 +23,7 @@
 body {
   display: flex;
   flex-direction: column;
-  background: #36393f;
+  background-color: #36393f;
 }
 
 /* Customize header */
@@ -35,7 +35,6 @@ header {
 .background {
   width: 100vw;
   height: 80vh;
-  opacity: 0.5;
   background-image: url(/img/warzone1.jpg);
   background-size: cover;
   position: center;
@@ -53,30 +52,40 @@ header {
   align-self: center;
 
   margin-top: 8rem;
-  width: 25vw;
+  height: 2.25rem;
+  /* width: 25vw; */
 }
 
 /* dropdown menu */
 .dropdown {
-  width: 5vw;
   position: relative;
-  display: inline-block;
-  background-color: #36393f;
+  display: inline-flex;
+  justify-content: space-evenly;
+  background-color: #40444b;
+  border: solid black 1px;
+  text-align: center;
+
+  width: 8rem;
+  margin-right: 5px;
+  padding: 2px;
+}
+.dropdown i {
+  margin-top: 5%;
 }
 .dropdown-content {
   display: none;
+  flex-direction: column;
   right: 0;
   top: 2.25rem;
   position: absolute;
-  background-color: #36393f;
-  min-width: 10vw;
+  background-color: #40444b;
+  min-width: 5rem;
+  border: solid black 1px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  padding: 1rem;
   z-index: 1;
 }
 .dropdown:hover .dropdown-content {
-  display: block;
+  display: flex;
 }
 
 /* radio input, hide default button, ccustomize new check box */
@@ -84,40 +93,44 @@ header {
   display: inline-flex;
   align-items: center;
   cursor: pointer;
-
-  margin-right: 15px;
 }
 .radio-input {
   display: none;
 }
 .radio-radio {
-  width: 1.25rem;
-  height: 1.25rem;
-  border: solid 2px #adafb2;
-  border-radius: 50%;
-  margin-right: 10px;
+  display: inline-flex;
   box-sizing: border-box; /*make sure padding works properly*/
-  padding: 2px;
+  align-items: center;
+  justify-content: left;
+
+  width: 100%;
+  height: 2.25rem;
+  font-size: 0.8rem;
+  padding: 5px;
 }
-.radio-radio::after {
+.radio-radio p {
+  width: 100%;
+}
+
+/* .radio-radio {
   content: "";
   width: 100%;
   height: 100%;
   display: block;
-  background: #7289da;
-  border-radius: 50%;
+  background: #75797e;
+  border-radius: 15px;
 
-  transform: scale(0); /*Sets a two way transformation*/
-  transition: transform 0.15s; /*Add transition to transformation*/
-}
-.radio-input:checked + .radio-radio::after {
-  transform: scale(1);
+  transform: scale(0);
+  transition: transform 0.15s;
+} */
+.radio-input:checked + .radio-radio {
+  background: #fff;
 }
 
 /* Customize name input  */
 .input {
   display: inline-flex;
-  height: 2.25rem;
+  /* height: 2.25rem; */
 }
 .name-input {
   font-size: 1rem;
@@ -130,7 +143,7 @@ header {
   background: #40444b;
 }
 .name-button {
-  width: 5vw;
+  width: 3rem;
   cursor: pointer;
   border: solid 1px black;
   background: #40444b;
@@ -141,17 +154,17 @@ header {
 
 /* JS stats container customization */
 .output {
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
   padding: 5rem;
 }
 .user-stats-container {
-  width: 20vw;
+  width: 18rem;
   height: 25vh;
   margin: 15px;
-  background: #40444b;
+  background-color: #40444b;
   color: #75797e;
-  border-radius: 25px;
   box-sizing: border-box;
   padding: 1rem;
 }
